@@ -6,11 +6,13 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'modules'))
 NuclearSimHub/
 ├── app.py
 └── modules/
+    ├── __init__.py       ← 빈 파일이라도 반드시 있어야 해요!
     ├── module1_neutronics.py
     ├── module2_thermal.py
     ├── module3_policy.py
     ├── module4_smr.py
     └── module5_radiation.py
+
 streamlit
 plotly
 numpy
