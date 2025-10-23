@@ -19,13 +19,7 @@ numpy
 pandas
 scipy
 import streamlit as st
-from modules import (
-    module1_neutronics,
-    module2_thermal,
-    module3_policy,
-    module4_smr,
-    module5_radiation
-)
+from modules import (module1_neutronics,module2_thermal,module3_policy,module4_smr,module5_radiation)
 
 st.set_page_config(page_title="NuclearSimHub", page_icon="⚛", layout="wide")
 
