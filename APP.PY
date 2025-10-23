@@ -9,4 +9,8 @@ NuclearSimHub/
     ├── module3_policy.py
     ├── module4_smr.py
     └── module5_radiation.py
-
+streamlit
+plotly
+numpy
+pandas
+scipy
