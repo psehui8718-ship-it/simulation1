@@ -1,3 +1,9 @@
+NuclearSimHub/
+└── modules/
+    ├── __init__.py   # 빈 파일이면 됨
+    ├── module1_neutronics.py
+    └── ...
+
 import streamlit as st
 import numpy as np
 import plotly.express as px
