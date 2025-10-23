@@ -1,0 +1,22 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+def run():
+    st.subheader("🏛 에너지 믹스 시뮬레이션")
+    st.write("원자력 발전 비중 변화가 탄소 배출량에 미치는 영향을 단순화된 모델로 시각화합니다.")
+
+    nuclear_share = st.slider("원자력 발전 비중 (%)", 20, 80, 30, 5)
+
+    co2_emission = 300 - (nuclear_share - 20) * 3
+    st.metric(label="예상 탄소배출량 (MtCO₂/yr)", value=f"{co2_emission:.1f}")
+
+    mix = pd.DataFrame({
+        "원자력비중(%)": [20, 30, 40, 50, 60, 70, 80],
+        "CO₂배출량(MtCO₂)": [300 - (x - 20)*3 for x in [20,30,40,50,60,70,80]]
+    })
+
+    fig = px.line(mix, x="원자력비중(%)", y="CO₂배출량(MtCO₂)",
+                  title="원자력 비중 변화에 따른 탄소 배출량 변화",
+                  markers=True)
+    st.plotly_chart(fig, use_container_width=True)
